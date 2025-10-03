@@ -13,6 +13,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-accent': 'var(--gradient-accent)',
+        'gradient-subtle': 'var(--gradient-subtle)',
+      },
+      boxShadow: {
+        'glow': 'var(--shadow-glow)',
+        'accent-glow': 'var(--shadow-accent-glow)',
+        'card': 'var(--shadow-card)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
