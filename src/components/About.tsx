@@ -1,5 +1,6 @@
 import { Calendar, MapPin, GraduationCap, Home } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import profileImage from "@/assets/profile.jpg";
 
 const About = () => {
   const info = [
@@ -9,6 +10,7 @@ const About = () => {
   ];
 
   const education = [
+    "SDN Sindang Barang 1",
     "Pondok Tahfidz Askar Kauny",
     "Pondok Multimedia Munzalan Indonesia"
   ];
@@ -25,6 +27,18 @@ const About = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Perjalanan seorang creative technologist yang terus belajar dan berkarya
             </p>
+          </div>
+
+          {/* Profile Image */}
+          <div className="flex justify-center mb-12">
+            <div className="relative w-48 h-48 md:w-64 md:h-64">
+              <img 
+                src={profileImage} 
+                alt="Atha Rasyid Risqi"
+                className="w-full h-full object-cover rounded-2xl shadow-glow border-4 border-primary/20"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">

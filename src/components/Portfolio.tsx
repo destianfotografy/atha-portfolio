@@ -19,9 +19,7 @@ const Portfolio = () => {
   const categories = [
     { id: "all", label: "Semua Karya", icon: Sparkles },
     { id: "photography", label: "Fotografi", icon: Camera },
-    { id: "design", label: "Desain", icon: Palette },
     { id: "coding", label: "Coding", icon: Code },
-    { id: "ai", label: "AI Projects", icon: Sparkles },
   ];
 
   const projects: Project[] = [
@@ -34,38 +32,17 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "Brand Identity Design",
-      category: "design",
-      description: "Desain identitas visual lengkap dari logo sampai brand guidelines",
-      tags: ["Branding", "Logo", "Visual Identity"]
-    },
-    {
-      id: 3,
       title: "Portfolio Website",
       category: "coding",
       description: "Website portfolio interaktif dengan animasi smooth dan responsive design",
       tags: ["React", "TypeScript", "Tailwind"]
     },
     {
-      id: 4,
-      title: "AI Content Generator",
-      category: "ai",
-      description: "Tool AI untuk generate konten kreatif dengan custom prompts",
-      tags: ["AI", "Automation", "Creative Tech"]
-    },
-    {
-      id: 5,
+      id: 3,
       title: "Street Photography",
       category: "photography",
       description: "Dokumentasi momen candid di jalanan kota dengan storytelling visual",
       tags: ["Street", "Documentary", "Urban"]
-    },
-    {
-      id: 6,
-      title: "UI/UX Mobile App",
-      category: "design",
-      description: "Desain interface aplikasi mobile dengan fokus user experience",
-      tags: ["UI/UX", "Mobile", "Figma"]
     },
   ];
 

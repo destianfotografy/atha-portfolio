@@ -39,8 +39,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "WhatsApp",
-      value: "+62 92241590417",
-      href: "https://wa.me/6292241590417",
+      value: "+62 82241590417",
+      href: "https://wa.me/6282241590417",
       color: "hover:text-green-500"
     },
     {
@@ -71,7 +71,7 @@ const Contact = () => {
       `Halo Atha! 👋\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`
     );
     
-    window.open(`https://wa.me/6292241590417?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/6282241590417?text=${whatsappMessage}`, '_blank');
     
     toast({
       title: "Success!",
