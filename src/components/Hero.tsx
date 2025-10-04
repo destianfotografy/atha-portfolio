@@ -55,6 +55,15 @@ const Hero = () => {
             <Button 
               variant="accent" 
               size="lg"
+              onClick={() => window.open('https://athastudio.vercel.app', '_blank')}
+              className="text-base"
+            >
+              Cek Website Jasa
+              <Sparkles className="ml-2 h-4 w-4" />
+            </Button>
+            <Button 
+              variant="secondary" 
+              size="lg"
               onClick={() => scrollToSection('contact')}
               className="text-base"
             >

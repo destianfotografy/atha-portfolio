@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Camera, Palette, Code, Sparkles } from "lucide-react";
+import { Camera, Code, Sparkles } from "lucide-react";
+import streetPhoto from "@/assets/portfolio/street-photography.jpg";
+import productPhoto from "@/assets/portfolio/product-photography.jpg";
+import portfolioWebsite from "@/assets/portfolio/portfolio-website.png";
 
-type Category = "all" | "photography" | "design" | "coding" | "ai";
+type Category = "all" | "photography" | "coding";
 
 interface Project {
   id: number;
@@ -11,6 +14,7 @@ interface Project {
   category: Category;
   description: string;
   tags: string[];
+  image: string;
 }
 
 const Portfolio = () => {
@@ -28,21 +32,24 @@ const Portfolio = () => {
       title: "Product Photography Series",
       category: "photography",
       description: "Koleksi foto produk dengan lighting dan komposisi yang estetik untuk brand lokal",
-      tags: ["Product", "Commercial", "Lighting"]
+      tags: ["Product", "Commercial", "Lighting"],
+      image: productPhoto
     },
     {
       id: 2,
       title: "Portfolio Website",
       category: "coding",
       description: "Website portfolio interaktif dengan animasi smooth dan responsive design",
-      tags: ["React", "TypeScript", "Tailwind"]
+      tags: ["React", "TypeScript", "Tailwind"],
+      image: portfolioWebsite
     },
     {
       id: 3,
       title: "Street Photography",
       category: "photography",
       description: "Dokumentasi momen candid di jalanan kota dengan storytelling visual",
-      tags: ["Street", "Documentary", "Urban"]
+      tags: ["Street", "Documentary", "Urban"],
+      image: streetPhoto
     },
   ];
 
@@ -93,9 +100,14 @@ const Portfolio = () => {
                 key={project.id}
                 className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
               >
-                {/* Image placeholder with gradient */}
-                <div className="aspect-video bg-gradient-primary relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 group-hover:scale-110 transition-transform duration-500" />
+                {/* Project Image */}
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 <div className="p-6 space-y-4">
