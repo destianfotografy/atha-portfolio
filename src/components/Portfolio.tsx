@@ -5,6 +5,9 @@ import { Camera, Code, Sparkles } from "lucide-react";
 import streetPhoto from "@/assets/portfolio/street-photography.jpg";
 import productPhoto from "@/assets/portfolio/product-photography.jpg";
 import portfolioWebsite from "@/assets/portfolio/portfolio-website.png";
+import ecommerceWebsite from "@/assets/portfolio/ecommerce-website.jpg";
+import eventPhoto from "@/assets/portfolio/event-photography.jpg";
+import mobileApp from "@/assets/portfolio/mobile-app.jpg";
 
 type Category = "all" | "photography" | "coding";
 
@@ -50,6 +53,30 @@ const Portfolio = () => {
       description: "Dokumentasi momen candid di jalanan kota dengan storytelling visual",
       tags: ["Street", "Documentary", "Urban"],
       image: streetPhoto
+    },
+    {
+      id: 4,
+      title: "E-Commerce Platform",
+      category: "coding",
+      description: "Full-stack e-commerce website dengan shopping cart, payment gateway, dan admin dashboard",
+      tags: ["React", "E-Commerce", "Full-Stack"],
+      image: ecommerceWebsite
+    },
+    {
+      id: 5,
+      title: "Event Documentation",
+      category: "photography",
+      description: "Dokumentasi acara wedding dan corporate event dengan style photojournalistic",
+      tags: ["Event", "Wedding", "Corporate"],
+      image: eventPhoto
+    },
+    {
+      id: 6,
+      title: "Mobile App Design",
+      category: "coding",
+      description: "UI/UX design untuk fitness tracking mobile app dengan interactive prototype",
+      tags: ["UI/UX", "Mobile", "Figma"],
+      image: mobileApp
     },
   ];
 

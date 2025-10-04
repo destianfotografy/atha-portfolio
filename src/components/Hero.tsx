@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -53,21 +53,13 @@ const Hero = () => {
               <ArrowDown className="ml-2 h-4 w-4" />
             </Button>
             <Button 
-              variant="accent" 
-              size="lg"
-              onClick={() => window.open('https://athastudio.vercel.app', '_blank')}
-              className="text-base"
-            >
-              Cek Website Jasa
-              <Sparkles className="ml-2 h-4 w-4" />
-            </Button>
-            <Button 
               variant="secondary" 
               size="lg"
               onClick={() => scrollToSection('contact')}
               className="text-base"
             >
               Hubungi Aku
+              <Mail className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
