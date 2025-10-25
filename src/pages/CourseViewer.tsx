@@ -3,17 +3,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Printer } from "lucide-react";
 import { photographyCourses } from "@/courses/photography/photography";
 import { useEffect, useState } from "react";
-
 const CourseViewer = () => {
-  const { courseId } = useParams();
+  const {
+    courseId
+  } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
   // Combine all courses (ready for expansion)
   const allCourses = [...photographyCourses];
-  
-  // Find the course
-  const course = allCourses.find((c) => c.id === courseId);
 
+  // Find the course
+  const course = allCourses.find(c => c.id === courseId);
   useEffect(() => {
     // Simulate loading time for iframe
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -27,13 +27,10 @@ const CourseViewer = () => {
       iframe.contentWindow.print();
     }
   };
-
   if (!course) {
     return <Navigate to="/courses" replace />;
   }
-
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
+  return <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/50">
         <div className="container px-4 md:px-6 py-4">
@@ -54,53 +51,23 @@ const CourseViewer = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={handlePrint}
-                className="gap-2"
-              >
-                <Printer className="w-4 h-4" />
-                <span className="hidden sm:inline">Print</span>
-              </Button>
-              
-              <a 
-                href="https://athastudio.vercel.app" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button variant="default" size="sm" className="gap-2">
-                  <ExternalLink className="w-4 h-4" />
-                  <span className="hidden sm:inline">Jasa Profesional</span>
-                </Button>
-              </a>
-            </div>
+            
           </div>
         </div>
       </header>
 
       {/* Course Content */}
       <main className="flex-1">
-        {isLoading && (
-          <div className="flex items-center justify-center h-96">
+        {isLoading && <div className="flex items-center justify-center h-96">
             <div className="animate-pulse text-muted-foreground">
               Memuat pembelajaran...
             </div>
-          </div>
-        )}
+          </div>}
         
-        <iframe
-          id="course-iframe"
-          src={course.htmlFile}
-          title={course.title}
-          className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`}
-          style={{ height: 'calc(100vh - 73px)' }}
-          sandbox="allow-same-origin allow-scripts"
-        />
+        <iframe id="course-iframe" src={course.htmlFile} title={course.title} className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`} style={{
+        height: 'calc(100vh - 73px)'
+      }} sandbox="allow-same-origin allow-scripts" />
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default CourseViewer;
