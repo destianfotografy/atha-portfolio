@@ -7,14 +7,13 @@ import CourseCard from "@/components/CourseCard";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "@/components/LanguageToggle";
-
 type CategoryFilter = "all" | "photography" | "design" | "coding";
-
 const Courses = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
-  
   const categories = [{
     id: "all" as CategoryFilter,
     label: t('courses.all'),
@@ -42,7 +41,6 @@ const Courses = () => {
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) || course.description.toLowerCase().includes(searchQuery.toLowerCase()) || course.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
-  
   return <div className="min-h-screen bg-background">
       <LanguageToggle />
       {/* Hero Section */}
@@ -101,7 +99,7 @@ const Courses = () => {
             <h3 className="text-2xl font-bold mb-2">{t('courses.ctaTitle')}</h3>
             <p className="text-muted-foreground mb-6">{t('courses.ctaDesc')}</p>
             <a href="https://athastudio.vercel.app" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2 py-0 mx-0 px-0 my-0">
                 {t('courses.ctaButton')}
                 <BookOpen className="w-4 h-4" />
               </Button>
