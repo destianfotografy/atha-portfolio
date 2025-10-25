@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,13 +9,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 6%;
-    --foreground: 210 40% 98%;
+    --background: 255 0% 100%;
+    --foreground: 0 0% 0%;
 
-    --card: 240 8% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 255 100% 100%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 240 8% 10%;
+    --popover: 240 8% 100%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 263 70% 60%;
@@ -41,7 +42,7 @@ All colors MUST be HSL.
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(263 70% 60%) 0%, hsl(217 91% 60%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 63%) 0%, hsl(340 82% 62%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 6%) 0%, hsl(240 12% 10%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(240 12% 6%) 100%);
     
     --shadow-glow: 0 0 40px hsl(263 70% 60% / 0.3);
     --shadow-accent-glow: 0 0 40px hsl(25 95% 63% / 0.3);
