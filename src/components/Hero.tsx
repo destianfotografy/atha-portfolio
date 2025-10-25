@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,7 @@ import heroImage3 from "@/assets/hero-bg-3.jpg";
 import heroImage4 from "@/assets/hero-bg-4.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
   const heroImages = [heroImage1, heroImage2, heroImage3, heroImage4];
   
   const scrollToSection = (id: string) => {
@@ -94,7 +96,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              onClick={() => window.location.href = '/courses'}
+              onClick={() => navigate('/courses')}
               className="text-base"
             >
               📚 Pembelajaran

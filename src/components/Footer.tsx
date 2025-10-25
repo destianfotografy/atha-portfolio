@@ -1,4 +1,5 @@
 import { Heart, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,13 +13,13 @@ const Footer = () => {
               © {currentYear} Atha Rasyid Risqi. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a 
-                href="/courses"
+              <Link 
+                to="/courses"
                 className="text-sm text-primary hover:text-accent transition-colors flex items-center gap-1 group"
               >
                 📚 Pembelajaran Gratis
                 <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
               <a 
                 href="https://athastudio.vercel.app" 
                 target="_blank" 
