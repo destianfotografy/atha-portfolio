@@ -62,7 +62,7 @@ const Hero = () => {
               Lihat Karyaku
               <ArrowDown className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="secondary" size="lg" onClick={() => scrollToSection('contact')} className="text-base">
+            <Button variant="secondary" size="lg" onClick={() => scrollToSection('contact')} className="text-base bg-slate-900 hover:bg-slate-800">
               Hubungi Aku
               <Mail className="ml-2 h-4 w-4" />
             </Button>
