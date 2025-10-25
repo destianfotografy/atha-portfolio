@@ -1,24 +1,54 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import heroImage1 from "@/assets/hero-bg.jpg";
+import heroImage2 from "@/assets/hero-bg-2.jpg";
+import heroImage3 from "@/assets/hero-bg-3.jpg";
+import heroImage4 from "@/assets/hero-bg-4.jpg";
 
 const Hero = () => {
+  const heroImages = [heroImage1, heroImage2, heroImage3, heroImage4];
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 bg-gradient-subtle">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
           }}
-        />
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="absolute inset-0"
+        >
+          <CarouselContent className="h-screen">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="relative h-screen">
+                <div 
+                  className="absolute inset-0 opacity-20"
+                  style={{
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
 
