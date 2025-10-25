@@ -127,14 +127,24 @@ const Portfolio = () => {
                 key={project.id}
                 className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
               >
-                {/* Project Image */}
+                {/* Project Image (clickable) */}
                 <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Wrap image in an anchor so users can click to view the full image in a new tab */}
+                  <a
+                    href={project.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Buka ${project.title} di tab baru`}
+                    className="block w-full h-full"
+                    title={project.title}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </a>
                 </div>
 
                 <div className="p-6 space-y-4">
