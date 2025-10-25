@@ -11,15 +11,24 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} Atha Rasyid Risqi. All rights reserved.
             </p>
-            <a 
-              href="https://athastudio.vercel.app" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-primary hover:text-accent transition-colors flex items-center gap-1 group"
-            >
-              Lihat Layanan Profesional
-              <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a 
+                href="/courses"
+                className="text-sm text-primary hover:text-accent transition-colors flex items-center gap-1 group"
+              >
+                📚 Pembelajaran Gratis
+                <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="https://athastudio.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-primary hover:text-accent transition-colors flex items-center gap-1 group"
+              >
+                Lihat Layanan Profesional
+                <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
           <p className="text-sm text-muted-foreground flex items-center gap-2">
             Made with <Heart className="w-4 h-4 text-accent fill-accent" /> and creativity
