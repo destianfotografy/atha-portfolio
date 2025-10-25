@@ -86,8 +86,7 @@ const Courses = () => {
             </div> : <div className="text-center py-16">
               <BookOpen className="w-16 h-16 mx-auto mb-4 text-muted-foreground/50" />
               <h3 className="text-xl font-semibold mb-2">Tidak ada hasil</h3>
-              <p className="text-muted-foreground">Mungkin yang kamu cari itu sedang dalam proses pembuatan
-Mohon Ditunggu ya 😄</p>
+              <p className="text-muted-foreground">Mungkin yang kamu cari itu sedang dalam proses pembuatan, Mohon Ditunggu ya 😄</p>
             </div>}
 
           {/* CTA Section */}
