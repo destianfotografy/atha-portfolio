@@ -91,14 +91,6 @@ const Hero = () => {
               Hubungi Aku
               <Mail className="ml-2 h-4 w-4" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => window.location.href = '/courses'}
-              className="text-base"
-            >
-              📚 Pembelajaran
-            </Button>
           </div>
         </div>
       </div>
