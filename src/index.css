@@ -76,4 +76,27 @@ All colors MUST be HSL.
   .animate-fade-in {
     animation: fade-in 0.6s ease-out;
   }
+
+  @keyframes card-border-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .card-animated-border::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    background: linear-gradient(
+      0deg,
+      transparent 0%,
+      hsl(263, 70%, 60%) 40%,
+      hsl(263, 70%, 60%) 60%,
+      transparent 100%
+    );
+    border-radius: inherit;
+    animation: card-border-rotate 8s linear infinite;
+  }
 }
