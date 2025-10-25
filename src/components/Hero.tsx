@@ -55,8 +55,12 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-muted-foreground">Creative Technologist</span>
+          </div>
           
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
             Atha Rasyid
           </h1>
           
@@ -88,7 +92,7 @@ const Hero = () => {
               <Mail className="ml-2 h-4 w-4" />
             </Button>
             <Button 
-              variant="secondary" 
+              variant="outline" 
               size="lg"
               onClick={() => window.location.href = '/courses'}
               className="text-base"

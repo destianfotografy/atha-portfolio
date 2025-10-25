@@ -13,7 +13,7 @@ const Skills = () => {
       icon: Code,
       title: "Web Development",
       skills: ["React & TypeScript", "Tailwind CSS", "Responsive Design", "UI/UX Implementation", "Modern Web Apps"],
-      color: "text-primary"
+      color: "text-accent"
     },
     {
       icon: Palette,
@@ -25,7 +25,7 @@ const Skills = () => {
       icon: Sparkles,
       title: "AI Integration",
       skills: ["AI-Powered Tools", "Automation", "Creative AI", "Workflow Optimization", "Content Enhancement"],
-      color: "text-primary"
+      color: "text-accent"
     },
     {
       icon: Zap,
@@ -37,7 +37,7 @@ const Skills = () => {
       icon: Lightbulb,
       title: "Soft Skills",
       skills: ["Problem Solving", "Creative Thinking", "Client Communication", "Project Management", "Attention to Detail"],
-      color: "text-primary"
+      color: "text-accent"
     }
   ];
 
@@ -46,7 +46,7 @@ const Skills = () => {
       <div className="container px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Skills & Expertise
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -61,7 +61,7 @@ const Skills = () => {
             return (
               <Card 
                 key={index}
-                className="group hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-white backdrop-blur-sm border-border/50"
+                className="group hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6 space-y-4">
@@ -69,13 +69,13 @@ const Skills = () => {
                     <div className={`p-3 rounded-lg bg-gradient-primary/10 ${category.color} group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-semibold text-black">{category.title}</h3>
+                    <h3 className="text-xl font-semibold">{category.title}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, idx) => (
                       <span 
                         key={idx}
-                        className="px-3 py-1 rounded-full border border-border/50 text-foreground/80 text-sm hover:bg-primary/20 hover:text-primary transition-colors duration-200"
+                        className="px-3 py-1 rounded-full bg-muted/50 text-muted-foreground text-sm hover:bg-primary/20 hover:text-primary transition-colors duration-200"
                       >
                         {skill}
                       </span>
