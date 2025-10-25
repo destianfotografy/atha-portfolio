@@ -33,7 +33,7 @@ export const photographyCourses: Course[] = [
     category: "photography",
     duration: "30 menit",
     level: "Beginner",
-    thumbnail: "/courses/photography/thumbnail.jpg",
+    thumbnail: "/courses/photo-20th.jpg",
     htmlFile: "/courses/photography/photography-20th.html",
     tags: ["Sejarah", "Fotografi", "Perkembangan", "Teknologi"],
     author: "Atha Rasyid Risqi",
