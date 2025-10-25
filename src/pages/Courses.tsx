@@ -95,16 +95,7 @@ const Courses = () => {
             </div>}
 
           {/* CTA Section */}
-          <div className="mt-16 p-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-2">{t('courses.ctaTitle')}</h3>
-            <p className="text-muted-foreground mb-6">{t('courses.ctaDesc')}</p>
-            <a href="https://athastudio.vercel.app" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2 py-0 mx-0 px-0 my-0">
-                {t('courses.ctaButton')}
-                <BookOpen className="w-4 h-4" />
-              </Button>
-            </a>
-          </div>
+          
         </div>
       </section>
     </div>;
