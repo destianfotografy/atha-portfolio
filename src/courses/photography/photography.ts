@@ -20,7 +20,7 @@ export const photographyCourses: Course[] = [
     category: "photography",
     duration: "30 menit",
     level: "Beginner",
-    thumbnail: "/src/assets/portfolio/street-photography.jpg",
+    thumbnail: "/courses/photography/thumbnail.jpg",
     htmlFile: "/courses/photography/penemuan-photography.html",
     tags: ["Sejarah", "Fotografi", "Niépce", "Daguerre", "Talbot", "Heliografi", "Daguerreotype", "Calotype"],
     author: "Atha Rasyid Risqi",
