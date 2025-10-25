@@ -11,7 +11,7 @@ interface CourseCardProps {
 const CourseCard = ({ course }: CourseCardProps) => {
   return (
     <Link to={`/course/${course.id}`}>
-      <Card className="card-animated-border group overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 h-full">
+      <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 h-full">
         <div className="relative overflow-hidden h-48">
           <img
             src={course.thumbnail}

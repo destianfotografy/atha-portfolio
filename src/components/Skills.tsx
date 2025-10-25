@@ -61,7 +61,7 @@ const Skills = () => {
             return (
               <Card 
                 key={index}
-                className="card-animated-border group hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50"
+                className="group hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6 space-y-4">
