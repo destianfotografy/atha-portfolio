@@ -1,18 +1,20 @@
 import { Calendar, MapPin, GraduationCap, Home } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import profileImage from "@/assets/profile.jpg";
 
 const About = () => {
+  const { t } = useTranslation();
   const info = [
-    { icon: Calendar, label: "Lahir", value: "20 Agustus 2008" },
-    { icon: MapPin, label: "Asal", value: "Balikpapan, Kalimantan" },
-    { icon: Home, label: "Tinggal di", value: "Depok, Beji" },
+    { icon: Calendar, label: t('about.born'), value: t('about.birthDate') },
+    { icon: MapPin, label: t('about.from'), value: t('about.fromLocation') },
+    { icon: Home, label: t('about.liveIn'), value: t('about.liveInLocation') },
   ];
 
   const education = [
-    "SDN Sindang Barang 1",
-    "Pondok Tahfidz Askar Kauny",
-    "Pondok Multimedia Munzalan Indonesia"
+    t('about.school1'),
+    t('about.school2'),
+    t('about.school3')
   ];
 
   return (
@@ -22,10 +24,10 @@ const About = () => {
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-              Tentang <span className="text-primary">Aku</span>
+              {t('about.title')} <span className="text-primary">{t('about.titleHighlight')}</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Perjalanan seorang creative technologist yang terus belajar dan berkarya
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -65,7 +67,7 @@ const About = () => {
                 <div className="p-3 rounded-lg bg-accent/10">
                   <GraduationCap className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-semibold text-lg">Pendidikan</h3>
+                <h3 className="font-semibold text-lg">{t('about.education')}</h3>
               </div>
               <ul className="space-y-3">
                 {education.map((edu, index) => (
@@ -82,24 +84,12 @@ const About = () => {
           <Card className="p-8 bg-gradient-primary border-0 shadow-glow">
             <div className="space-y-4">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
-                Kombinasi Seni + Logika
+                {t('about.storyTitle')}
               </h3>
               <div className="space-y-3 text-primary-foreground/90">
-                <p>
-                  Dari Kalimantan sampai Depok, perjalanan gue penuh sama eksplorasi. 
-                  Fotografi ngajarin gue cara melihat dunia dari sudut pandang berbeda, 
-                  desain ngasih cara buat mewujudkan imajinasi jadi visual yang keren.
-                </p>
-                <p>
-                  Coding? Itu senjata buat bikin semua ide jadi nyata dan interaktif. 
-                  Kombinasi ketiganya bikin gue bisa berkarya tanpa batas - dari foto produk 
-                  yang estetik, desain interface yang user-friendly, sampai aplikasi yang 
-                  solve real problems.
-                </p>
-                <p className="font-semibold text-primary-foreground">
-                  Buat gue, kreativitas bukan cuma soal seni - tapi juga tentang teknologi 
-                  dan gimana cara menggunakannya untuk bikin impact.
-                </p>
+                <p>{t('about.storyP1')}</p>
+                <p>{t('about.storyP2')}</p>
+                <p className="font-semibold text-primary-foreground">{t('about.storyP3')}</p>
               </div>
             </div>
           </Card>

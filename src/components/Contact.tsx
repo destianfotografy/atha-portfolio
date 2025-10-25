@@ -5,22 +5,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
-const contactSchema = z.object({
-  name: z.string().trim().nonempty({
-    message: "Nama harus diisi"
-  }).max(100),
-  email: z.string().trim().email({
-    message: "Email tidak valid"
-  }).max(255),
-  message: z.string().trim().nonempty({
-    message: "Pesan harus diisi"
-  }).max(1000)
-});
 const Contact = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  const { t } = useTranslation();
+  
+  const contactSchema = z.object({
+    name: z.string().trim().nonempty({ message: t('contact.errorName') }).max(100),
+    email: z.string().trim().email({ message: t('contact.errorEmail') }).max(255),
+    message: z.string().trim().nonempty({ message: t('contact.errorMessage') }).max(1000)
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,25 +23,25 @@ const Contact = () => {
   });
   const socialLinks = [{
     icon: Instagram,
-    label: "Instagram",
+    label: t('contact.instagram'),
     value: "@athadiary21",
     href: "https://instagram.com/athadiary21",
     color: "hover:text-pink-500"
   }, {
     icon: Facebook,
-    label: "Facebook",
+    label: t('contact.facebook'),
     value: "AthaDiary21",
     href: "https://facebook.com/AthaDiary21",
     color: "hover:text-blue-500"
   }, {
     icon: Phone,
-    label: "WhatsApp",
+    label: t('contact.whatsapp'),
     value: "+62 82241590417",
     href: "https://wa.me/6282241590417",
     color: "hover:text-green-500"
   }, {
     icon: Mail,
-    label: "Email",
+    label: t('contact.emailLabel'),
     value: "athadiary21@gmail.com",
     href: "mailto:athadiary21@gmail.com",
     color: "hover:text-accent"
@@ -70,8 +65,8 @@ const Contact = () => {
     const whatsappMessage = encodeURIComponent(`Halo Atha! 👋\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
     window.open(`https://wa.me/6282241590417?text=${whatsappMessage}`, '_blank');
     toast({
-      title: "Success!",
-      description: "Pesan akan dikirim via WhatsApp"
+      title: t('contact.successTitle'),
+      description: t('contact.successDescription')
     });
   };
   return <section id="contact" className="py-20 md:py-32 relative">
@@ -80,10 +75,10 @@ const Contact = () => {
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-              Hubungi <span className="text-primary">Aku</span>
+              {t('contact.title')} <span className="text-primary">{t('contact.titleHighlight')}</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ada project atau kolaborasi menarik? Let's talk!
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -93,9 +88,9 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Nama
+                    {t('contact.name')}
                   </label>
-                  <Input id="name" placeholder="Nama kamu" value={formData.name} onChange={e => setFormData({
+                  <Input id="name" placeholder={t('contact.namePlaceholder')} value={formData.name} onChange={e => setFormData({
                   ...formData,
                   name: e.target.value
                 })} className="bg-background/50" required maxLength={100} />
@@ -103,9 +98,9 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
+                    {t('contact.email')}
                   </label>
-                  <Input id="email" type="email" placeholder="email@example.com" value={formData.email} onChange={e => setFormData({
+                  <Input id="email" type="email" placeholder={t('contact.emailPlaceholder')} value={formData.email} onChange={e => setFormData({
                   ...formData,
                   email: e.target.value
                 })} className="bg-background/50" required maxLength={255} />
@@ -113,16 +108,16 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Pesan
+                    {t('contact.message')}
                   </label>
-                  <Textarea id="message" placeholder="Ceritain project atau ide kamu..." value={formData.message} onChange={e => setFormData({
+                  <Textarea id="message" placeholder={t('contact.messagePlaceholder')} value={formData.message} onChange={e => setFormData({
                   ...formData,
                   message: e.target.value
                 })} className="bg-background/50 min-h-[120px]" required maxLength={1000} />
                 </div>
 
                 <Button type="submit" variant="hero" className="w-full" size="lg">
-                  Kirim Pesan via WhatsApp
+                  {t('contact.send')}
                 </Button>
               </form>
             </Card>
@@ -131,11 +126,10 @@ const Contact = () => {
             <div className="space-y-6">
               <Card className="p-8 bg-gradient-accent border-0 shadow-accent-glow">
                 <h3 className="font-display text-2xl font-bold mb-6 text-slate-50">
-                  Mari Terhubung!
+                  {t('contact.cardTitle')}
                 </h3>
                 <p className="mb-6 text-slate-50">
-                  Selalu terbuka untuk project baru, kolaborasi kreatif, atau sekadar 
-                  diskusi tentang fotografi, desain, dan teknologi.
+                  {t('contact.cardDescription')}
                 </p>
                 <div className="flex gap-3">
                   <div className="w-2 h-2 rounded-full bg-accent-foreground/40 animate-pulse" />

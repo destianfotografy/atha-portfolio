@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "badge": "Creative Technologist",
+    "name": "Atha Rasyid",
+    "tagline": "Belajar Banyak, Berkarya Nyata, Tampil Unik",
+    "description": "Menggabungkan fotografi, desain, coding, dan kreativitas artistik jadi satu karya yang memukau",
+    "viewWork": "Lihat Karyaku",
+    "contactMe": "Hubungi Aku",
+    "learning": "📚 Pembelajaran"
+  },
+  "about": {
+    "title": "Tentang",
+    "titleHighlight": "Aku",
+    "subtitle": "Perjalanan seorang creative technologist yang terus belajar dan berkarya",
+    "born": "Lahir",
+    "birthDate": "20 Agustus 2008",
+    "from": "Asal",
+    "fromLocation": "Balikpapan, Kalimantan",
+    "liveIn": "Tinggal di",
+    "liveInLocation": "Depok, Beji",
+    "education": "Pendidikan",
+    "school1": "SDN Sindang Barang 1",
+    "school2": "Pondok Tahfidz Askar Kauny",
+    "school3": "Pondok Multimedia Munzalan Indonesia",
+    "storyTitle": "Kombinasi Seni + Logika",
+    "storyP1": "Dari Kalimantan sampai Depok, perjalanan gue penuh sama eksplorasi. Fotografi ngajarin gue cara melihat dunia dari sudut pandang berbeda, desain ngasih cara buat mewujudkan imajinasi jadi visual yang keren.",
+    "storyP2": "Coding? Itu senjata buat bikin semua ide jadi nyata dan interaktif. Kombinasi ketiganya bikin gue bisa berkarya tanpa batas - dari foto produk yang estetik, desain interface yang user-friendly, sampai aplikasi yang solve real problems.",
+    "storyP3": "Buat gue, kreativitas bukan cuma soal seni - tapi juga tentang teknologi dan gimana cara menggunakannya untuk bikin impact."
+  },
+  "portfolio": {
+    "title": "Karya",
+    "titleHighlight": "Pilihan",
+    "subtitle": "Koleksi project terbaik dari berbagai bidang kreatif",
+    "filterAll": "Semua Karya",
+    "filterPhoto": "Fotografi",
+    "filterCode": "Coding",
+    "projects": {
+      "product": {
+        "title": "Product Photography Series",
+        "description": "Koleksi foto produk dengan lighting dan komposisi yang estetik untuk brand lokal"
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Website portfolio interaktif dengan animasi smooth dan responsive design"
+      },
+      "street": {
+        "title": "Street Photography",
+        "description": "Dokumentasi momen candid di jalanan kota dengan storytelling visual"
+      },
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "description": "Full-stack e-commerce website dengan shopping cart, payment gateway, dan admin dashboard"
+      },
+      "event": {
+        "title": "Event Documentation",
+        "description": "Dokumentasi acara wedding dan corporate event dengan style photojournalistic"
+      },
+      "mobile": {
+        "title": "Mobile App Design",
+        "description": "UI/UX design untuk fitness tracking mobile app dengan interactive prototype"
+      }
+    },
+    "openInNewTab": "Buka {{title}} di tab baru"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Kombinasi unik dari kreativitas visual, technical skills, dan problem-solving yang menghasilkan solusi inovatif",
+    "photography": "Photography",
+    "webDev": "Web Development",
+    "creativeDesign": "Creative Design",
+    "aiIntegration": "AI Integration",
+    "toolsTech": "Tools & Tech",
+    "softSkills": "Soft Skills"
+  },
+  "contact": {
+    "title": "Hubungi",
+    "titleHighlight": "Aku",
+    "subtitle": "Ada project atau kolaborasi menarik? Let's talk!",
+    "name": "Nama",
+    "namePlaceholder": "Nama kamu",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "message": "Pesan",
+    "messagePlaceholder": "Ceritain project atau ide kamu...",
+    "send": "Kirim Pesan via WhatsApp",
+    "cardTitle": "Mari Terhubung!",
+    "cardDescription": "Selalu terbuka untuk project baru, kolaborasi kreatif, atau sekadar diskusi tentang fotografi, desain, dan teknologi.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "emailLabel": "Email",
+    "errorName": "Nama harus diisi",
+    "errorEmail": "Email tidak valid",
+    "errorMessage": "Pesan harus diisi",
+    "successTitle": "Success!",
+    "successDescription": "Pesan akan dikirim via WhatsApp"
+  },
+  "footer": {
+    "copyright": "Hak Cipta Dilindungi."
+  },
+  "courses": {
+    "title": "Pembelajaran",
+    "subtitle": "Jelajahi berbagai materi pembelajaran dari fotografi, desain, hingga coding. Semua gratis untuk meningkatkan skill kreatif kamu.",
+    "search": "Cari pembelajaran...",
+    "all": "Semua",
+    "photography": "Photography",
+    "design": "Design",
+    "coding": "Coding",
+    "showing": "Menampilkan",
+    "results": "pembelajaran",
+    "for": "untuk",
+    "noResults": "Tidak ada hasil",
+    "noResultsDesc": "Mungkin yang kamu cari itu sedang dalam proses pembuatan, Mohon Ditunggu ya 😄",
+    "ctaTitle": "Butuh Jasa Profesional?",
+    "ctaDesc": "Jika kamu memerlukan layanan fotografi & website professional, kunjungi website kami.",
+    "ctaButton": "Lihat Layanan Profesional",
+    "backHome": "← Kembali ke Home",
+    "duration": "menit",
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+  "courseViewer": {
+    "back": "Kembali",
+    "loading": "Memuat pembelajaran..."
+  }
+}

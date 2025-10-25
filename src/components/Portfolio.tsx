@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Camera, Code, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import streetPhoto from "@/assets/portfolio/street-photography.jpg";
 import productPhoto from "@/assets/portfolio/product-photography.jpg";
 import portfolioWebsite from "@/assets/portfolio/portfolio-website.png";
@@ -13,68 +14,69 @@ type Category = "all" | "photography" | "coding";
 
 interface Project {
   id: number;
-  title: string;
+  titleKey: string;
   category: Category;
-  description: string;
+  descriptionKey: string;
   tags: string[];
   image: string;
 }
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
   const categories = [
-    { id: "all", label: "Semua Karya", icon: Sparkles },
-    { id: "photography", label: "Fotografi", icon: Camera },
-    { id: "coding", label: "Coding", icon: Code },
+    { id: "all", label: t('portfolio.filterAll'), icon: Sparkles },
+    { id: "photography", label: t('portfolio.filterPhoto'), icon: Camera },
+    { id: "coding", label: t('portfolio.filterCode'), icon: Code },
   ];
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "Product Photography Series",
+      titleKey: "portfolio.projects.product.title",
       category: "photography",
-      description: "Koleksi foto produk dengan lighting dan komposisi yang estetik untuk brand lokal",
+      descriptionKey: "portfolio.projects.product.description",
       tags: ["Product", "Commercial", "Lighting"],
       image: productPhoto
     },
     {
       id: 2,
-      title: "Portfolio Website",
+      titleKey: "portfolio.projects.portfolio.title",
       category: "coding",
-      description: "Website portfolio interaktif dengan animasi smooth dan responsive design",
+      descriptionKey: "portfolio.projects.portfolio.description",
       tags: ["React", "TypeScript", "Tailwind"],
       image: portfolioWebsite
     },
     {
       id: 3,
-      title: "Street Photography",
+      titleKey: "portfolio.projects.street.title",
       category: "photography",
-      description: "Dokumentasi momen candid di jalanan kota dengan storytelling visual",
+      descriptionKey: "portfolio.projects.street.description",
       tags: ["Street", "Documentary", "Urban"],
       image: streetPhoto
     },
     {
       id: 4,
-      title: "E-Commerce Platform",
+      titleKey: "portfolio.projects.ecommerce.title",
       category: "coding",
-      description: "Full-stack e-commerce website dengan shopping cart, payment gateway, dan admin dashboard",
+      descriptionKey: "portfolio.projects.ecommerce.description",
       tags: ["React", "E-Commerce", "Full-Stack"],
       image: ecommerceWebsite
     },
     {
       id: 5,
-      title: "Event Documentation",
+      titleKey: "portfolio.projects.event.title",
       category: "photography",
-      description: "Dokumentasi acara wedding dan corporate event dengan style photojournalistic",
+      descriptionKey: "portfolio.projects.event.description",
       tags: ["Event", "Wedding", "Corporate"],
       image: eventPhoto
     },
     {
       id: 6,
-      title: "Mobile App Design",
+      titleKey: "portfolio.projects.mobile.title",
       category: "coding",
-      description: "UI/UX design untuk fitness tracking mobile app dengan interactive prototype",
+      descriptionKey: "portfolio.projects.mobile.description",
       tags: ["UI/UX", "Mobile", "Figma"],
       image: mobileApp
     },
@@ -91,10 +93,10 @@ const Portfolio = () => {
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-              Karya <span className="text-primary">Pilihan</span>
+              {t('portfolio.title')} <span className="text-primary">{t('portfolio.titleHighlight')}</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Koleksi project terbaik dari berbagai bidang kreatif
+              {t('portfolio.subtitle')}
             </p>
           </div>
 
@@ -122,48 +124,50 @@ const Portfolio = () => {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => (
-              <Card 
-                key={project.id}
-                className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
-              >
-                {/* Project Image (clickable) */}
-                <div className="aspect-video relative overflow-hidden">
-                  {/* Wrap image in an anchor so users can click to view the full image in a new tab */}
-                  <a
-                    href={project.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Buka ${project.title} di tab baru`}
-                    className="block w-full h-full"
-                    title={project.title}
-                  >
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </a>
-                </div>
-
-                <div className="p-6 space-y-4">
-                  <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+            {filteredProjects.map((project) => {
+              const title = t(project.titleKey);
+              return (
+                <Card 
+                  key={project.id}
+                  className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
+                >
+                  {/* Project Image (clickable) */}
+                  <div className="aspect-video relative overflow-hidden">
+                    <a
+                      href={project.image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t('portfolio.openInNewTab', { title })}
+                      className="block w-full h-full"
+                      title={title}
+                    >
+                      <img 
+                        src={project.image} 
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </a>
                   </div>
-                </div>
-              </Card>
-            ))}
+
+                  <div className="p-6 space-y-4">
+                    <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
+                      {title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {t(project.descriptionKey)}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, idx) => (
+                        <Badge key={idx} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

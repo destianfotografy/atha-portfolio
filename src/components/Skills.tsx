@@ -1,41 +1,44 @@
 import { Camera, Code, Palette, Zap, Sparkles, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
+  const { t } = useTranslation();
+  
   const skillCategories = [
     {
       icon: Camera,
-      title: "Photography",
+      title: t('skills.photography'),
       skills: ["Product Photography", "Street Photography", "Event Documentation", "Portrait", "Commercial"],
       color: "text-primary"
     },
     {
       icon: Code,
-      title: "Web Development",
+      title: t('skills.webDev'),
       skills: ["React & TypeScript", "Tailwind CSS", "Responsive Design", "UI/UX Implementation", "Modern Web Apps"],
       color: "text-accent"
     },
     {
       icon: Palette,
-      title: "Creative Design",
+      title: t('skills.creativeDesign'),
       skills: ["Visual Design", "Brand Identity", "Layout Design", "Color Theory", "Typography"],
       color: "text-primary"
     },
     {
       icon: Sparkles,
-      title: "AI Integration",
+      title: t('skills.aiIntegration'),
       skills: ["AI-Powered Tools", "Automation", "Creative AI", "Workflow Optimization", "Content Enhancement"],
       color: "text-accent"
     },
     {
       icon: Zap,
-      title: "Tools & Tech",
+      title: t('skills.toolsTech'),
       skills: ["Figma", "Adobe Suite", "Git & GitHub", "VS Code", "Vercel/Netlify"],
       color: "text-primary"
     },
     {
       icon: Lightbulb,
-      title: "Soft Skills",
+      title: t('skills.softSkills'),
       skills: ["Problem Solving", "Creative Thinking", "Client Communication", "Project Management", "Attention to Detail"],
       color: "text-accent"
     }
@@ -47,10 +50,10 @@ const Skills = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Skills & Expertise
+            {t('skills.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Kombinasi unik dari kreativitas visual, technical skills, dan problem-solving yang menghasilkan solusi inovatif
+            {t('skills.subtitle')}
           </p>
         </div>
 

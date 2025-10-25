@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "badge": "Creative Technologist",
+    "name": "Atha Rasyid",
+    "tagline": "Learn Much, Create Real, Stand Out",
+    "description": "Combining photography, design, coding, and artistic creativity into stunning masterpieces",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me",
+    "learning": "📚 Learning"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Me",
+    "subtitle": "The journey of a creative technologist who continues to learn and create",
+    "born": "Born",
+    "birthDate": "August 20, 2008",
+    "from": "From",
+    "fromLocation": "Balikpapan, Kalimantan",
+    "liveIn": "Live in",
+    "liveInLocation": "Depok, Beji",
+    "education": "Education",
+    "school1": "SDN Sindang Barang 1",
+    "school2": "Pondok Tahfidz Askar Kauny",
+    "school3": "Pondok Multimedia Munzalan Indonesia",
+    "storyTitle": "Art + Logic Combined",
+    "storyP1": "From Kalimantan to Depok, my journey is full of exploration. Photography taught me how to see the world from different perspectives, design gave me a way to turn imagination into cool visuals.",
+    "storyP2": "Coding? It's the weapon to make all ideas real and interactive. The combination of the three makes me able to create without limits - from aesthetic product photos, user-friendly interface designs, to applications that solve real problems.",
+    "storyP3": "For me, creativity is not just about art - but also about technology and how to use it to make an impact."
+  },
+  "portfolio": {
+    "title": "Featured",
+    "titleHighlight": "Works",
+    "subtitle": "Collection of best projects from various creative fields",
+    "filterAll": "All Works",
+    "filterPhoto": "Photography",
+    "filterCode": "Coding",
+    "projects": {
+      "product": {
+        "title": "Product Photography Series",
+        "description": "Collection of product photos with aesthetic lighting and composition for local brands"
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Interactive portfolio website with smooth animations and responsive design"
+      },
+      "street": {
+        "title": "Street Photography",
+        "description": "Documentation of candid moments on city streets with visual storytelling"
+      },
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "description": "Full-stack e-commerce website with shopping cart, payment gateway, and admin dashboard"
+      },
+      "event": {
+        "title": "Event Documentation",
+        "description": "Wedding and corporate event documentation with photojournalistic style"
+      },
+      "mobile": {
+        "title": "Mobile App Design",
+        "description": "UI/UX design for fitness tracking mobile app with interactive prototype"
+      }
+    },
+    "openInNewTab": "Open {{title}} in new tab"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Unique combination of visual creativity, technical skills, and problem-solving that produces innovative solutions",
+    "photography": "Photography",
+    "webDev": "Web Development",
+    "creativeDesign": "Creative Design",
+    "aiIntegration": "AI Integration",
+    "toolsTech": "Tools & Tech",
+    "softSkills": "Soft Skills"
+  },
+  "contact": {
+    "title": "Contact",
+    "titleHighlight": "Me",
+    "subtitle": "Have an interesting project or collaboration? Let's talk!",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project or idea...",
+    "send": "Send Message via WhatsApp",
+    "cardTitle": "Let's Connect!",
+    "cardDescription": "Always open for new projects, creative collaborations, or just discussions about photography, design, and technology.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "emailLabel": "Email",
+    "errorName": "Name is required",
+    "errorEmail": "Invalid email",
+    "errorMessage": "Message is required",
+    "successTitle": "Success!",
+    "successDescription": "Message will be sent via WhatsApp"
+  },
+  "footer": {
+    "copyright": "All Rights Reserved."
+  },
+  "courses": {
+    "title": "Learning",
+    "subtitle": "Explore various learning materials from photography, design, to coding. All free to improve your creative skills.",
+    "search": "Search learning...",
+    "all": "All",
+    "photography": "Photography",
+    "design": "Design",
+    "coding": "Coding",
+    "showing": "Showing",
+    "results": "courses",
+    "for": "for",
+    "noResults": "No results found",
+    "noResultsDesc": "Maybe what you're looking for is being created, Please wait 😄",
+    "ctaTitle": "Need Professional Services?",
+    "ctaDesc": "If you need professional photography & website services, visit our website.",
+    "ctaButton": "View Professional Services",
+    "backHome": "← Back to Home",
+    "duration": "minutes",
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+  "courseViewer": {
+    "back": "Back",
+    "loading": "Loading course..."
+  }
+}

@@ -5,25 +5,31 @@ import { Search, BookOpen, Camera, Code, Palette } from "lucide-react";
 import { photographyCourses } from "@/courses/photography/photography";
 import CourseCard from "@/components/CourseCard";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "@/components/LanguageToggle";
+
 type CategoryFilter = "all" | "photography" | "design" | "coding";
+
 const Courses = () => {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
+  
   const categories = [{
     id: "all" as CategoryFilter,
-    label: "Semua",
+    label: t('courses.all'),
     icon: BookOpen
   }, {
     id: "photography" as CategoryFilter,
-    label: "Photography",
+    label: t('courses.photography'),
     icon: Camera
   }, {
     id: "design" as CategoryFilter,
-    label: "Design",
+    label: t('courses.design'),
     icon: Palette
   }, {
     id: "coding" as CategoryFilter,
-    label: "Coding",
+    label: t('courses.coding'),
     icon: Code
   }];
 
@@ -36,27 +42,28 @@ const Courses = () => {
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) || course.description.toLowerCase().includes(searchQuery.toLowerCase()) || course.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
+  
   return <div className="min-h-screen bg-background">
+      <LanguageToggle />
       {/* Hero Section */}
       <section className="relative py-20 px-4 md:px-6 bg-gradient-subtle border-b border-border/50">
         <div className="container max-w-6xl mx-auto text-center">
           <Link to="/" className="inline-block mb-8">
             <Button variant="outline" size="sm">
-              ← Kembali ke Home
+              {t('courses.backHome')}
             </Button>
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Pembelajaran
+            {t('courses.title')}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Jelajahi berbagai materi pembelajaran dari fotografi, desain, hingga coding. 
-            Semua gratis untuk meningkatkan skill kreatif kamu.
+            {t('courses.subtitle')}
           </p>
 
           {/* Search Bar */}
           <div className="max-w-xl mx-auto relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input placeholder="Cari pembelajaran..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 h-12" />
+            <Input placeholder={t('courses.search')} value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 h-12" />
           </div>
         </div>
       </section>
@@ -75,8 +82,8 @@ const Courses = () => {
           {/* Results Count */}
           <div className="mb-6">
             <p className="text-sm text-muted-foreground">
-              Menampilkan {filteredCourses.length} pembelajaran
-              {searchQuery && ` untuk "${searchQuery}"`}
+              {t('courses.showing')} {filteredCourses.length} {t('courses.results')}
+              {searchQuery && ` ${t('courses.for')} "${searchQuery}"`}
             </p>
           </div>
 
@@ -85,17 +92,17 @@ const Courses = () => {
               {filteredCourses.map(course => <CourseCard key={course.id} course={course} />)}
             </div> : <div className="text-center py-16">
               <BookOpen className="w-16 h-16 mx-auto mb-4 text-muted-foreground/50" />
-              <h3 className="text-xl font-semibold mb-2">Tidak ada hasil</h3>
-              <p className="text-muted-foreground">Mungkin yang kamu cari itu sedang dalam proses pembuatan, Mohon Ditunggu ya 😄</p>
+              <h3 className="text-xl font-semibold mb-2">{t('courses.noResults')}</h3>
+              <p className="text-muted-foreground">{t('courses.noResultsDesc')}</p>
             </div>}
 
           {/* CTA Section */}
           <div className="mt-16 p-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-2">Butuh Jasa Profesional?</h3>
-            <p className="text-muted-foreground mb-6">Jika kamu memerlukan layanan fotografi & website professional, kunjungi website kami.</p>
+            <h3 className="text-2xl font-bold mb-2">{t('courses.ctaTitle')}</h3>
+            <p className="text-muted-foreground mb-6">{t('courses.ctaDesc')}</p>
             <a href="https://athastudio.vercel.app" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="gap-2">
-                Lihat Layanan Profesional
+                {t('courses.ctaButton')}
                 <BookOpen className="w-4 h-4" />
               </Button>
             </a>

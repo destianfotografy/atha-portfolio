@@ -1,12 +1,14 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Printer } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { photographyCourses } from "@/courses/photography/photography";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "@/components/LanguageToggle";
+
 const CourseViewer = () => {
-  const {
-    courseId
-  } = useParams();
+  const { courseId } = useParams();
+  const { t, i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   // Combine all courses (ready for expansion)
@@ -14,23 +16,20 @@ const CourseViewer = () => {
 
   // Find the course
   const course = allCourses.find(c => c.id === courseId);
+  
+  // Get the correct HTML file based on language
+  const courseHtmlFile = course?.htmlFile.replace('.html', i18n.language === 'en' ? '-en.html' : '.html');
   useEffect(() => {
     // Simulate loading time for iframe
     const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
-  }, [courseId]);
+  }, [courseId, i18n.language]);
 
-  // Handle print
-  const handlePrint = () => {
-    const iframe = document.getElementById("course-iframe") as HTMLIFrameElement;
-    if (iframe?.contentWindow) {
-      iframe.contentWindow.print();
-    }
-  };
   if (!course) {
     return <Navigate to="/courses" replace />;
   }
   return <div className="min-h-screen bg-background flex flex-col">
+      <LanguageToggle />
       {/* Header */}
       <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/50">
         <div className="container px-4 md:px-6 py-4">
@@ -39,7 +38,7 @@ const CourseViewer = () => {
               <Link to="/courses">
                 <Button variant="ghost" size="sm" className="gap-2">
                   <ArrowLeft className="w-4 h-4" />
-                  <span className="hidden sm:inline">Kembali</span>
+                  <span className="hidden sm:inline">{t('courseViewer.back')}</span>
                 </Button>
               </Link>
               
@@ -60,11 +59,11 @@ const CourseViewer = () => {
       <main className="flex-1">
         {isLoading && <div className="flex items-center justify-center h-96">
             <div className="animate-pulse text-muted-foreground">
-              Memuat pembelajaran...
+              {t('courseViewer.loading')}
             </div>
           </div>}
         
-        <iframe id="course-iframe" src={course.htmlFile} title={course.title} className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`} style={{
+        <iframe id="course-iframe" src={courseHtmlFile} title={course.title} className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`} style={{
         height: 'calc(100vh - 73px)'
       }} sandbox="allow-same-origin allow-scripts" />
       </main>
