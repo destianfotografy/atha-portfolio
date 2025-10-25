@@ -125,7 +125,7 @@ const Portfolio = () => {
             {filteredProjects.map((project) => (
               <Card 
                 key={project.id}
-                className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
+                className="card-animated-border group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Project Image (clickable) */}
                 <div className="aspect-video relative overflow-hidden">

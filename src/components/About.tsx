@@ -45,7 +45,7 @@ const About = () => {
             {/* Info Cards */}
             <div className="space-y-4">
               {info.map((item, index) => (
-                <Card key={index} className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300">
+                <Card key={index} className="card-animated-border p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-lg bg-primary/10">
                       <item.icon className="w-5 h-5 text-primary" />
@@ -60,7 +60,7 @@ const About = () => {
             </div>
 
             {/* Education */}
-            <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
+            <Card className="card-animated-border p-6 bg-card/50 backdrop-blur-sm border-border/50">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 rounded-lg bg-accent/10">
                   <GraduationCap className="w-5 h-5 text-accent" />
@@ -79,7 +79,7 @@ const About = () => {
           </div>
 
           {/* Story */}
-          <Card className="p-8 bg-gradient-primary border-0 shadow-glow">
+          <Card className="card-animated-border p-8 bg-gradient-primary border-0 shadow-glow">
             <div className="space-y-4">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
                 Kombinasi Seni + Logika

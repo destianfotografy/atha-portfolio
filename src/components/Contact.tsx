@@ -95,7 +95,7 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
+            <Card className="card-animated-border p-8 bg-card/50 backdrop-blur-sm border-border/50">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -151,7 +151,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <Card className="p-8 bg-gradient-accent border-0 shadow-accent-glow">
+              <Card className="card-animated-border p-8 bg-gradient-accent border-0 shadow-accent-glow">
                 <h3 className="font-display text-2xl font-bold mb-6 text-accent-foreground">
                   Mari Terhubung!
                 </h3>
@@ -177,7 +177,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      <Card className="p-4 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
+                      <Card className="card-animated-border p-4 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
                         <div className="flex items-center gap-4">
                           <div className="p-2 rounded-lg bg-primary/10">
                             <Icon className={`w-5 h-5 text-primary transition-colors ${social.color}`} />

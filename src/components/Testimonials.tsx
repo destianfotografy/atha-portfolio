@@ -42,7 +42,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 relative"
+                className="card-animated-border p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 relative"
               >
                 <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
                 
