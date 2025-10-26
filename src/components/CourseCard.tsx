@@ -19,7 +19,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
-          <Badge className="absolute top-4 right-4 bg-accent/90 backdrop-blur-sm">
+          <Badge className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm">
             {course.level}
           </Badge>
         </div>

@@ -104,4 +104,17 @@ export const photographyCourses: Course[] = [
     author: "Atha Rasyid Risqi",
     publishDate: "2025-10",
   },
+  {
+    id: "iso-shutter-aperture",
+    title: "Pengertian ISO, Shutter Speed, dan Aperture",
+    description: "Cara mengatur ISO, Shutter Speed, dan Aperture pada kamera untuk mendapatkan hasil foto yang optimal",
+    category: "photography",
+    duration: "180 menit",
+    level: "Beginner",
+    thumbnail: "/courses/photography/iso.jpg",
+    htmlFile: "/courses/photography/iso.html",
+    tags: [ "Shutter", "ISO",  "Fotografi", "Perkembangan", "jenis", "Aperture", "Teknologi"],
+    author: "Atha Rasyid Risqi",
+    publishDate: "2025-10",
+  },
 ];
