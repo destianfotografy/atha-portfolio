@@ -64,11 +64,11 @@ const Hero = () => {
               {t('hero.viewWork')}
               <ArrowDown className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="secondary" size="lg" onClick={() => scrollToSection('contact')} className="text-base bg-slate-900 hover:bg-slate-800">
+            <Button variant="hero" size="lg" onClick={() => scrollToSection('contact')} className="text-base bg-slate-900 hover:bg-slate-800">
               {t('hero.contactMe')}
               <Mail className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="outline" size="lg" onClick={() => navigate('/courses')} className="text-base bg-slate-900 hover:bg-slate-800">
+            <Button variant="hero" size="lg" onClick={() => navigate('/courses')} className="text-base bg-slate-900 hover:bg-slate-800">
               {t('hero.learning')}
             </Button>
           </div>

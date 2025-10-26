@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <footer className="py-12 border-t border-border/50 bg-card/30 backdrop-blur-sm">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+          <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-muted-foreground">
               © {currentYear} Atha Rasyid Risqi. {t('footer.copyright')}
             </p>
