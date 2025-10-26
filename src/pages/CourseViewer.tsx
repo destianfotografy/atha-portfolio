@@ -17,8 +17,6 @@ const CourseViewer = () => {
   // Find the course
   const course = allCourses.find(c => c.id === courseId);
   
-  // Get the correct HTML file based on language
-  const courseHtmlFile = course?.htmlFile.replace('.html', i18n.language === 'en' ? '-en.html' : '.html');
   useEffect(() => {
     // Simulate loading time for iframe
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -63,7 +61,7 @@ const CourseViewer = () => {
             </div>
           </div>}
         
-        <iframe id="course-iframe" src={courseHtmlFile} title={course.title} className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`} style={{
+        <iframe id="course-iframe" src={course.htmlFile} title={course.title} className={`w-full border-0 ${isLoading ? 'hidden' : 'block'}`} style={{
         height: 'calc(100vh - 73px)'
       }} sandbox="allow-same-origin allow-scripts" />
       </main>
